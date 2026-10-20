@@ -16,7 +16,7 @@ Then visit `http://localhost:8000`. Open `editorial.html` separately for the pri
 
 The desk is protected by Supabase email sign-in and an editor allowlist. It supports candidate review, editing, dismissal, and immediate publication after approval. The included fixtures are original fictional examples, not live trends.
 
-The private desk includes an on-demand GDELT Project search for recent political news leads. It shows linked headlines only, deduplicates URLs, and sorts by recency; it does not claim that coverage is viral or popular. These links are research leads, not reusable images. Reddit post URLs in a published item's sources are shown with Reddit's official embed in the explainer. Instagram is manual only: add a public post as a source when you have permission to feature its media, and provide a media URL that can legally and reliably be displayed. See [SUPABASE_SETUP.md](SUPABASE_SETUP.md).
+The private desk includes an on-demand GDELT Project search for English-language political coverage from Indian outlets over the past 7 days. It shows linked headlines, deduplicates URLs, and sorts by recency; it does not claim that coverage is viral or popular. These links are research leads, not reusable images. Reddit post URLs in a published item's sources are shown with Reddit's official embed in the explainer. Instagram is manual only: add a public post as a source when you have permission to feature its media, and provide a media URL that can legally and reliably be displayed. See [SUPABASE_SETUP.md](SUPABASE_SETUP.md).
 
 ## Hosting
 
