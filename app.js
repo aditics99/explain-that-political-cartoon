@@ -36,7 +36,7 @@ async function renderHome(){
  const markCentered=()=>{const center=innerWidth/2;let best=null,distance=Infinity;tiles.forEach(tile=>{const rect=tile.getBoundingClientRect(),d=Math.abs(rect.left+rect.width/2-center);if(d<distance){best=tile;distance=d}});tiles.forEach(tile=>tile.classList.toggle('is-centered',tile===best))};
  requestAnimationFrame(()=>{tiles[activeIndex]?.scrollIntoView({behavior:'instant',block:'nearest',inline:'center'});markCentered()});
  app.querySelector('.carousel-track').addEventListener('scroll',markCentered,{passive:true});
- const move=delta=>{if(!tiles.length)return;const selectedIndex=tiles.findIndex(el=>el.dataset.open===selectedId);const centeredIndex=tiles.findIndex(el=>el.classList.contains('is-centered'));const i=selectedIndex>=0?selectedIndex:Math.max(0,centeredIndex);const next=(i+delta+tiles.length)%tiles.length;location.hash='#/item/'+encodeURIComponent(tiles[next].dataset.open)};
+ const move=delta=>{if(!tiles.length)return;const selectedIndex=tiles.findIndex(el=>el.dataset.open===selectedId);const centeredIndex=tiles.findIndex(el=>el.classList.contains('is-centered'));const i=selectedIndex>=0?selectedIndex:Math.max(0,centeredIndex);const next=(i+delta+tiles.length)%tiles.length;if(selectedId){location.hash='#/item/'+encodeURIComponent(tiles[next].dataset.open)}else{tiles[next].scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'})}};
  const track=app.querySelector('.carousel-track');
  track.addEventListener('wheel',e=>{if(Math.abs(e.deltaY)>Math.abs(e.deltaX)){e.preventDefault();track.scrollBy({left:e.deltaY,behavior:'auto'})}},{passive:false});
  app.querySelector('.carousel-prev').onclick=()=>move(-1);app.querySelector('.carousel-next').onclick=()=>move(1);
