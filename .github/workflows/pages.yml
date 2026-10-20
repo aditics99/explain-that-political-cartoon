@@ -25,10 +25,10 @@ jobs:
         uses: actions/checkout@v4
       - name: Configure Pages
         uses: actions/configure-pages@v5
-      - name: Prepare public gallery files
+      - name: Prepare gallery and protected editorial page
         run: |
           mkdir -p dist
-          cp index.html app.js styles.css dist/
+          cp index.html editorial.html app.js styles.css supabase-config.js dist/
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
