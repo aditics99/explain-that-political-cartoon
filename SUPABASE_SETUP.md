@@ -13,7 +13,7 @@ The Supabase project is `explain-that`. The archive desk uses Supabase email sig
 
 The existing table needs archive metadata before the new entry form can save. In Supabase **SQL Editor**, run [`supabase/archive_migration.sql`](supabase/archive_migration.sql) once. It adds the newspaper, cartoonist, publication date, topics, original link, display mode, and permission fields. It also changes the public read policy so an image entry is visible only when display permission is confirmed; link-only entries show the original newspaper link.
 
-For a fresh Supabase project, run [`supabase/schema.sql`](supabase/schema.sql) instead of the migration.
+For a fresh Supabase project, run [`supabase/schema.sql`](supabase/schema.sql) first, then run the archive migration too. The migration is safe to run after the schema and ensures the archive-specific policy is in place.
 
 ## Add archive entries
 
